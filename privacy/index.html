@@ -174,12 +174,12 @@ main.setup{padding-block:48px 72px}
 <ul>
   <li>Runs on your computer. It reads the metadata files of a Power BI project (PBIP): model and report definitions. It never opens <code>cache.abf</code> or any imported data.</li>
   <li>Makes no network calls and has no telemetry, analytics or usage statistics.</li>
-  <li>Writes the HTML report only where you choose. It changes your project only when you run <code>--embed</code>, which adds one hidden table, <code>TrailsBI</code>, to your semantic model.</li>
+  <li>Writes the HTML report only where you choose. It changes your project only when you run <code>--embed</code>, which adds a hidden table, <code>TrailsBI</code>, to your semantic model, and a hidden TrailsBI page with the TrailsBI visual to your report.</li>
 </ul>
 
 <h2>The TrailsBI visual</h2>
 <ul>
-  <li>Runs inside Power BI's sandbox for custom visuals. It reads only the fields you add to it: the Part and Chunk columns of the TrailsBI table.</li>
+  <li>Runs inside Power BI's sandbox for custom visuals. It reads only the field you add to it: the Chunk column of the TrailsBI table.</li>
   <li>Makes no network calls and sends nothing to TrailsBI or anyone else. It asks Power BI for no web access.</li>
   <li>A link in the visual opens only when you click it, and Power BI asks you first.</li>
   <li>The TrailsBI table holds your model's table, column and measure names, DAX and data source addresses. It lives in your semantic model under your organization's Power BI settings and permissions. Anyone who can open the report can read it in the visual.</li>
