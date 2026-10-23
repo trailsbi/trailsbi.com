@@ -292,20 +292,20 @@ html.dark .pbi-steps li::before{color:#0D1524}
         <p>The TrailsBI visual puts all five views on a page of your report, so you can check lineage and health without leaving Power&nbsp;BI.</p>
       </div>
       <ul>
-        <li>The same Lineage, Model, Reports, Health and AI Readiness views, fully interactive.</li>
-        <li>Show only the views you need: switch each one on or off in Format visual, Pages.</li>
+        <li>One command sets it up: <code>--embed</code> adds a TrailsBI page to your report with the visual already on it. Nothing to import.</li>
+        <li>The same Lineage, Model, Reports, Health and AI Readiness views, fully interactive. Switch each one on or off in Format visual, Pages.</li>
         <li>Runs in Power BI's visual sandbox with no network calls. Its data is a hidden table in your model.</li>
       </ul>
       <div class="btns">
-        <a class="btn primary" href="https://github.com/trailsbi/trailsbi-visual/releases/latest" target="_blank" rel="noopener">Download the visual</a>
-        <a class="btn" href="https://github.com/trailsbi/trailsbi-visual#install-and-use" target="_blank" rel="noopener">Setup guide</a>
+        <a class="btn primary" href="https://github.com/trailsbi/trailsbi#see-it-inside-power-bi" target="_blank" rel="noopener">How it works</a>
+        <a class="btn" href="https://github.com/trailsbi/trailsbi-visual/releases/latest" target="_blank" rel="noopener">Visual file</a>
       </div>
-      <p class="note">The table holds your model's names, DAX and data source addresses, and anyone who can open the report can read them in the visual. Embed it only where that is allowed.</p>
+      <p class="note">The TrailsBI page is hidden from report readers, but the table holds your model's names, DAX and data source addresses, and anyone who can edit or build on the report can read them. Embed it only where that is allowed.</p>
     </div>
     <ol class="pbi-steps">
-      <li><b>Download the visual</b><span><code>TrailsBI.pbiviz</code> from the <a href="https://github.com/trailsbi/trailsbi-visual/releases/latest" target="_blank" rel="noopener">latest release</a>. Needs TrailsBI 1.1.0 or later.</span></li>
+      <li><b>Update TrailsBI to 1.2 or later</b><span class="cta-cmd"><span class="pm" role="group" aria-label="Update with"><button type="button" data-pm="pip" aria-pressed="true" title="Update with pip">pip</button><button type="button" data-pm="uv" aria-pressed="false" title="Update with uv">uv</button></span><code id="cmd-upd" data-pip="pip install -U trailsbi" data-uv="uv tool upgrade trailsbi">pip install -U trailsbi</code><button class="copy" data-copy="cmd-upd">Copy</button></span></li>
       <li><b>Close the project in Power BI Desktop, then embed</b><span class="cta-cmd"><code id="cmd-embed">trailsbi "your-pbip-project-path" --embed</code><button class="copy" data-copy="cmd-embed">Copy</button></span></li>
-      <li><b>Open, refresh and add the visual</b><span>Open the project and refresh. Import the visual from a file, turn on View hidden in the Data pane, and drag TrailsBI Part and Chunk onto it.</span></li>
+      <li><b>Open, refresh, and go to the TrailsBI page</b><span>Open the project and refresh (Home, Refresh). The visual is already on the page, hidden from report readers. Run <code>--embed</code> again after changes to the model or report.</span></li>
     </ol>
   </div>
 </section>
