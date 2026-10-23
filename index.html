@@ -194,6 +194,23 @@ footer .wrap{align-items:center}
   .hero{padding-top:40px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Inside Power BI: the TrailsBI visual */
+section#visual{padding-block:72px 0}
+.pbi{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:40px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:clamp(24px,4vw,44px);box-shadow:var(--shadow)}
+.pbi .sec-head{margin-bottom:18px}
+.pbi .badge{justify-self:start;display:inline-block;margin:0 0 4px;padding:3px 10px;border-radius:999px;background:var(--teal-soft);color:var(--teal-ink);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pbi ul{margin:0 0 20px;padding-left:20px;display:grid;gap:8px;color:var(--ink);font-size:15.5px;line-height:1.5}
+.pbi ul li::marker{color:var(--teal)}
+.pbi .btns{display:flex;flex-wrap:wrap;gap:10px}
+.pbi .note{margin:18px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+.pbi-steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:st}
+.pbi-steps li{counter-increment:st;display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:12px;row-gap:5px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.pbi-steps li::before{content:counter(st);grid-row:span 2;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:14px}
+html.dark .pbi-steps li::before{color:#0D1524}
+.pbi-steps b{color:var(--ink);font-size:15px}
+.pbi-steps span{color:var(--muted);font-size:14px;line-height:1.5;min-width:0}
+.pbi-steps a{color:var(--teal-ink);font-weight:600}
+@media (max-width:980px){.pbi{grid-template-columns:1fr}}
 .hero-nopy{margin:14px 0 0!important;font-size:14px!important;color:var(--on-navy-muted)}
 .hero-nopy a,.cta-nopy a{color:#4FD1C5;font-weight:600;text-decoration:none;white-space:nowrap}
 .hero-nopy a::after,.cta-nopy a::after{content:" \2192"}
@@ -214,6 +231,7 @@ footer .wrap{align-items:center}
   <nav aria-label="Main">
     <a href="#tour">Features</a>
     <a href="samples/">Samples</a>
+    <a class="hide-s" href="#visual">In Power BI</a>
     <a class="hide-s" href="#start">Get Started</a>
   </nav>
   <span class="links hide-s"><a class="soc" href="https://github.com/trailsbi" target="_blank" rel="noopener" aria-label="TrailsBI on GitHub" title="github.com/trailsbi"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg></a><a class="soc" href="https://youtube.com/@trailsbi" target="_blank" rel="noopener" aria-label="TrailsBI on YouTube" title="youtube.com/@trailsbi"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></a></span>
@@ -250,7 +268,7 @@ footer .wrap{align-items:center}
 <section class="promise" aria-label="Privacy">
   <div class="wrap">
     <h2>Completely Offline Reports. <b>Nothing leaves your machine, ever!</b></h2>
-    <div class="fact"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M14 3v5h5"/><path d="M14 3l5 5v3"/><rect x="14" y="15" width="7" height="6" rx="1.2"/><path d="M15.5 15v-1.5a2 2 0 0 1 4 0V15"/></svg></span><div><strong>Read-only</strong><span>Never changes your PBIP files. No sign&#8209;in, no Power BI service, no XMLA.</span></div></div>
+    <div class="fact"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M14 3v5h5"/><path d="M14 3l5 5v3"/><rect x="14" y="15" width="7" height="6" rx="1.2"/><path d="M15.5 15v-1.5a2 2 0 0 1 4 0V15"/></svg></span><div><strong>Read-only</strong><span>Never changes your PBIP files, unless you embed the report for the visual. No sign&#8209;in, no Power BI service, no XMLA.</span></div></div>
     <div class="fact"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18"/><path d="M5.8 8.3A5 5 0 0 0 7 18h10.3"/><path d="M20.6 15.6A4 4 0 0 0 17.5 10h-1.3A7 7 0 0 0 9.2 5.3"/></svg></span><div><strong>Works offline</strong><span>One HTML file with no external scripts or fonts. Opens with the network off.</span></div></div>
     <div class="fact"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><strong>No tracking</strong><span>No cookies, analytics or usage stats. No admin rights needed to run it.</span></div></div>
   </div>
@@ -263,6 +281,33 @@ footer .wrap{align-items:center}
   </div>
   <div class="vtabs" role="tablist" aria-label="Views"><button class="vt" role="tab" id="t-lineage" aria-controls="p-lineage" aria-selected="true">Lineage<span class="vbar" aria-hidden="true"><i></i></span></button><button class="vt" role="tab" id="t-model" aria-controls="p-model" aria-selected="false" tabindex="-1">Model<span class="vbar" aria-hidden="true"><i></i></span></button><button class="vt" role="tab" id="t-reports" aria-controls="p-reports" aria-selected="false" tabindex="-1">Reports<span class="vbar" aria-hidden="true"><i></i></span></button><button class="vt" role="tab" id="t-health" aria-controls="p-health" aria-selected="false" tabindex="-1">Health<span class="vbar" aria-hidden="true"><i></i></span></button><button class="vt" role="tab" id="t-ai" aria-controls="p-ai" aria-selected="false" tabindex="-1">AI Readiness<span class="vbar" aria-hidden="true"><i></i></span></button></div>
   <div class="vp" role="tabpanel" id="p-lineage" aria-labelledby="t-lineage"><div class="vp-text"><h3>Follow any field from source to visual</h3><ul><li>Pick a column or measure and see every data source, table and measure it depends on, in navy.</li><li>Everything built on it, down to the visuals and pages, lights up in teal.</li><li>Compact cards for the whole picture, detailed cards with usage counts when you need them.</li></ul></div><figure class="frame"><img src="img/hr-lineage-home.jpg" alt="TrailsBI Lineage view on Microsoft's Human Resources sample" width="1600" height="900" loading="eager"></figure></div><div class="vp" role="tabpanel" id="p-model" aria-labelledby="t-model" hidden><div class="vp-text"><h3>Every table, column, measure and relationship</h3><ul><li>A searchable list of the whole model with DAX and Power Query one click away.</li><li>A relationship diagram laid out for you, with cardinality and filter direction on every line.</li><li>Export the diagram as PNG or SVG, with table and column names hidden when you share it.</li></ul></div><figure class="frame"><img src="img/ra-diagram.jpg" alt="TrailsBI Model view on Microsoft's Retail Analysis sample" width="1600" height="900" loading="eager"></figure></div><div class="vp" role="tabpanel" id="p-reports" aria-labelledby="t-reports" hidden><div class="vp-text"><h3>What each page and visual actually uses</h3><ul><li>Every page drawn as a canvas preview, with page, report and visual-level filters.</li><li>Each visual lists its fields by role: values, axis, legend, sort, filters and formatting.</li><li>Fields a visual uses but the model no longer has are flagged before your users find them.</li></ul></div><figure class="frame"><img src="img/rs-reports.jpg" alt="TrailsBI Reports view on Microsoft's Regional Sales sample" width="1600" height="900" loading="eager"></figure></div><div class="vp" role="tabpanel" id="p-health" aria-labelledby="t-health" hidden><div class="vp-text"><h3>Best Practice Analyzer, without the setup</h3><ul><li>Microsoft's Best Practice Analyzer rules, run straight from the TMDL files.</li><li>Lineage checks on top: unused columns and measures, broken references, missing sort fields.</li><li>Measures count toward their home table, so a measures table is never suggested for deletion.</li></ul></div><figure class="frame"><img src="img/ss-health.jpg" alt="TrailsBI Health view on Microsoft's Store Sales sample" width="1600" height="900" loading="eager"></figure></div><div class="vp" role="tabpanel" id="p-ai" aria-labelledby="t-ai" hidden><div class="vp-text"><h3>A score for how well Copilot will understand the model</h3><ul><li>Checks the foundations Copilot relies on: Q&A enabled, explicit measures, a star schema, a marked date table.</li><li>Then naming, descriptions and AI instructions, grouped so you can work through them in order.</li><li>One score from 0 to 100%, and each finding lists the tables, columns and measures it is about.</li></ul></div><figure class="frame"><img src="img/cma-ai.jpg" alt="TrailsBI AI Readiness view on Microsoft's Competitive Marketing Analysis sample" width="1600" height="900" loading="eager"></figure></div>
+</section>
+
+<section class="wrap" id="visual" aria-labelledby="visual-h">
+  <div class="pbi">
+    <div>
+      <div class="sec-head">
+        <span class="badge">New · Preview</span>
+        <h2 id="visual-h">See it <em>inside Power&nbsp;BI</em></h2>
+        <p>The TrailsBI visual puts all five views on a page of your report, so you can check lineage and health without leaving Power&nbsp;BI.</p>
+      </div>
+      <ul>
+        <li>The same Lineage, Model, Reports, Health and AI Readiness views, fully interactive.</li>
+        <li>Show only the views you need: switch each one on or off in Format visual, Pages.</li>
+        <li>Runs in Power BI's visual sandbox with no network calls. Its data is a hidden table in your model.</li>
+      </ul>
+      <div class="btns">
+        <a class="btn primary" href="https://github.com/trailsbi/trailsbi-visual/releases/latest" target="_blank" rel="noopener">Download the visual</a>
+        <a class="btn" href="https://github.com/trailsbi/trailsbi-visual#install-and-use" target="_blank" rel="noopener">Setup guide</a>
+      </div>
+      <p class="note">The table holds your model's names, DAX and data source addresses, and anyone who can open the report can read them in the visual. Embed it only where that is allowed.</p>
+    </div>
+    <ol class="pbi-steps">
+      <li><b>Download the visual</b><span><code>TrailsBI.pbiviz</code> from the <a href="https://github.com/trailsbi/trailsbi-visual/releases/latest" target="_blank" rel="noopener">latest release</a>. Needs TrailsBI 1.1.0 or later.</span></li>
+      <li><b>Close the project in Power BI Desktop, then embed</b><span class="cta-cmd"><code id="cmd-embed">trailsbi "your-pbip-project-path" --embed</code><button class="copy" data-copy="cmd-embed">Copy</button></span></li>
+      <li><b>Open, refresh and add the visual</b><span>Open the project and refresh. Import the visual from a file, turn on View hidden in the Data pane, and drag TrailsBI Part and Chunk onto it.</span></li>
+    </ol>
+  </div>
 </section>
 
 <section class="cta wrap" id="start" aria-labelledby="cta-h">
