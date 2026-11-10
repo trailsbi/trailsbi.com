@@ -120,13 +120,7 @@ footer a{color:var(--teal-ink)}
 dialog#zoom{max-width:96vw;max-height:94vh;padding:0;border:0;border-radius:10px;background:var(--surface)}
 dialog#zoom::backdrop{background:rgba(13,21,36,.7)}
 dialog#zoom img{display:block;max-width:96vw;max-height:94vh;width:auto;height:auto}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
-.view:nth-child(2),.view:last-child{grid-column:1/-1}
+.view:nth-child(2),.view:nth-child(3),.view:last-child{grid-column:1/-1}
 .cta{padding-block:40px 64px;font-size:15px;line-height:1.55}
 .cta-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:center;background:#13203B;color:#E6ECF3;border-radius:16px;padding:clamp(24px,4vw,48px);box-shadow:0 1px 2px rgba(19,32,59,.06),0 12px 32px rgba(19,32,59,.10)}
 html.dark .cta-box{background:var(--surface);border:1px solid var(--teal);box-shadow:none}
@@ -239,6 +233,9 @@ header.top nav a[aria-current]{color:var(--ink);font-weight:600}
   <button class="shot" data-img="img/cma-trace.jpg" aria-label="Enlarge: Competitive Marketing Analysis, Lineage · Detailed"><img src="img/cma-trace.jpg" alt="Competitive Marketing Analysis in TrailsBI: Lineage · Detailed" loading="lazy"></button>
   <figcaption><span class="vlabel">Lineage · Detailed View</span><span class="vsub">Trace any item from source to visual</span><span class="vcap"><b>Revenue</b> selected: navy lines show it comes from <code>Sales[Revenue]</code> via one SQL source; teal lines show the 10 measures and the visuals built on it. The Details panel lists everything upstream and downstream.</span></figcaption>
 </figure><figure class="view">
+  <button class="shot" data-img="img/cma-graph.jpg" aria-label="Enlarge: Competitive Marketing Analysis, Lineage · Graph"><img src="img/cma-graph.jpg" alt="Competitive Marketing Analysis in TrailsBI: Lineage · Graph" loading="lazy"></button>
+  <figcaption><span class="vlabel">Lineage · Graph View</span><span class="vsub">The whole project in rings</span><span class="vcap">Data sources in the middle, tables with their columns and measures around them, pages and their visuals on the outer ring. <b>Units YoY Change %</b> selected: it reaches 11 visuals on 4 pages, in teal, and what it depends on shows in navy.</span></figcaption>
+</figure><figure class="view">
   <button class="shot" data-img="img/cma-model.jpg" aria-label="Enlarge: Competitive Marketing Analysis, Model · Details"><img src="img/cma-model.jpg" alt="Competitive Marketing Analysis in TrailsBI: Model · Details" loading="lazy"></button>
   <figcaption><span class="vlabel">Model · Detail View</span><span class="vsub">Every table, column and measure</span><span class="vcap">Every table expanded with its columns, measures and hierarchies, keys and hidden objects marked. DAX is one click away and search narrows all of it as you type.</span></figcaption>
 </figure><figure class="view">
@@ -286,6 +283,9 @@ header.top nav a[aria-current]{color:var(--ink);font-weight:600}
 </figure><figure class="view">
   <button class="shot" data-img="img/hr-trace.jpg" aria-label="Enlarge: Human Resources, Lineage · Detailed"><img src="img/hr-trace.jpg" alt="Human Resources in TrailsBI: Lineage · Detailed" loading="lazy"></button>
   <figcaption><span class="vlabel">Lineage · Detailed View</span><span class="vsub">Trace any item from source to visual</span><span class="vcap"><b>EmpCount</b> selected: it reads <code>EmplID</code> and <code>PeriodNumber</code>, and 11 measures and 22 items in total depend on it. The Details panel lists everything upstream and downstream.</span></figcaption>
+</figure><figure class="view">
+  <button class="shot" data-img="img/hr-graph.jpg" aria-label="Enlarge: Human Resources, Lineage · Graph"><img src="img/hr-graph.jpg" alt="Human Resources in TrailsBI: Lineage · Graph" loading="lazy"></button>
+  <figcaption><span class="vlabel">Lineage · Graph View</span><span class="vsub">The whole project in rings</span><span class="vcap">Data sources in the middle, tables with their columns and measures around them, pages and their visuals on the outer ring. <b>Actives</b> selected: it reaches 8 visuals on 3 pages, in teal, and what it depends on shows in navy.</span></figcaption>
 </figure><figure class="view">
   <button class="shot" data-img="img/hr-model.jpg" aria-label="Enlarge: Human Resources, Model · Details"><img src="img/hr-model.jpg" alt="Human Resources in TrailsBI: Model · Details" loading="lazy"></button>
   <figcaption><span class="vlabel">Model · Detail View</span><span class="vsub">Every table, column and measure</span><span class="vcap">Every table expanded with its columns, measures and hierarchies, keys and hidden objects marked. DAX is one click away and search narrows all of it as you type.</span></figcaption>
@@ -335,6 +335,9 @@ header.top nav a[aria-current]{color:var(--ink);font-weight:600}
   <button class="shot" data-img="img/rs-trace.jpg" aria-label="Enlarge: Regional Sales, Lineage · Detailed"><img src="img/rs-trace.jpg" alt="Regional Sales in TrailsBI: Lineage · Detailed" loading="lazy"></button>
   <figcaption><span class="vlabel">Lineage · Detailed View</span><span class="vsub">Trace any item from source to visual</span><span class="vcap"><b>Revenue Won</b> selected: one Excel workbook feeds it through <code>Status</code> and <code>Value</code>; 36 items depend on it. The Details panel lists everything upstream and downstream.</span></figcaption>
 </figure><figure class="view">
+  <button class="shot" data-img="img/rs-graph.jpg" aria-label="Enlarge: Regional Sales, Lineage · Graph"><img src="img/rs-graph.jpg" alt="Regional Sales in TrailsBI: Lineage · Graph" loading="lazy"></button>
+  <figcaption><span class="vlabel">Lineage · Graph View</span><span class="vsub">The whole project in rings</span><span class="vcap">Data sources in the middle, tables with their columns and measures around them, pages and their visuals on the outer ring. <b>Revenue Won</b> selected: it reaches 26 visuals on 6 pages, in teal, and what it depends on shows in navy.</span></figcaption>
+</figure><figure class="view">
   <button class="shot" data-img="img/rs-model.jpg" aria-label="Enlarge: Regional Sales, Model · Details"><img src="img/rs-model.jpg" alt="Regional Sales in TrailsBI: Model · Details" loading="lazy"></button>
   <figcaption><span class="vlabel">Model · Detail View</span><span class="vsub">Every table, column and measure</span><span class="vcap">Every table expanded with its columns, measures and hierarchies, keys and hidden objects marked. DAX is one click away and search narrows all of it as you type.</span></figcaption>
 </figure><figure class="view">
@@ -383,6 +386,9 @@ header.top nav a[aria-current]{color:var(--ink);font-weight:600}
   <button class="shot" data-img="img/ra-trace.jpg" aria-label="Enlarge: Retail Analysis, Lineage · Detailed"><img src="img/ra-trace.jpg" alt="Retail Analysis in TrailsBI: Lineage · Detailed" loading="lazy"></button>
   <figcaption><span class="vlabel">Lineage · Detailed View</span><span class="vsub">Trace any item from source to visual</span><span class="vcap"><b>TotalSales</b> selected: two Sales columns and two measures feed it; this-year and last-year sales, margins and averages are built on it. The Details panel lists everything upstream and downstream.</span></figcaption>
 </figure><figure class="view">
+  <button class="shot" data-img="img/ra-graph.jpg" aria-label="Enlarge: Retail Analysis, Lineage · Graph"><img src="img/ra-graph.jpg" alt="Retail Analysis in TrailsBI: Lineage · Graph" loading="lazy"></button>
+  <figcaption><span class="vlabel">Lineage · Graph View</span><span class="vsub">The whole project in rings</span><span class="vcap">Data sources in the middle, tables with their columns and measures around them, pages and their visuals on the outer ring. <b>TotalSalesTY</b> selected: it reaches 11 visuals on 3 pages, in teal, and what it depends on shows in navy.</span></figcaption>
+</figure><figure class="view">
   <button class="shot" data-img="img/ra-model.jpg" aria-label="Enlarge: Retail Analysis, Model · Details"><img src="img/ra-model.jpg" alt="Retail Analysis in TrailsBI: Model · Details" loading="lazy"></button>
   <figcaption><span class="vlabel">Model · Detail View</span><span class="vsub">Every table, column and measure</span><span class="vcap">Every table expanded with its columns, measures and hierarchies, keys and hidden objects marked. DAX is one click away and search narrows all of it as you type.</span></figcaption>
 </figure><figure class="view">
@@ -430,6 +436,9 @@ header.top nav a[aria-current]{color:var(--ink);font-weight:600}
 </figure><figure class="view">
   <button class="shot" data-img="img/ss-trace.jpg" aria-label="Enlarge: Store Sales, Lineage · Detailed"><img src="img/ss-trace.jpg" alt="Store Sales in TrailsBI: Lineage · Detailed" loading="lazy"></button>
   <figcaption><span class="vlabel">Lineage · Detailed View</span><span class="vsub">Trace any item from source to visual</span><span class="vcap"><b>Total Sales Var</b> selected: <code>[Sales TY]-[Sales LY]</code>, with 10 items feeding it and 20 depending on it. The Details panel lists everything upstream and downstream.</span></figcaption>
+</figure><figure class="view">
+  <button class="shot" data-img="img/ss-graph.jpg" aria-label="Enlarge: Store Sales, Lineage · Graph"><img src="img/ss-graph.jpg" alt="Store Sales in TrailsBI: Lineage · Graph" loading="lazy"></button>
+  <figcaption><span class="vlabel">Lineage · Graph View</span><span class="vsub">The whole project in rings</span><span class="vcap">Data sources in the middle, tables with their columns and measures around them, pages and their visuals on the outer ring. <b>Sales TY</b> selected: it reaches 13 visuals on 3 pages, in teal, and what it depends on shows in navy.</span></figcaption>
 </figure><figure class="view">
   <button class="shot" data-img="img/ss-model.jpg" aria-label="Enlarge: Store Sales, Model · Details"><img src="img/ss-model.jpg" alt="Store Sales in TrailsBI: Model · Details" loading="lazy"></button>
   <figcaption><span class="vlabel">Model · Detail View</span><span class="vsub">Every table, column and measure</span><span class="vcap">Every table expanded with its columns, measures and hierarchies, keys and hidden objects marked. DAX is one click away and search narrows all of it as you type.</span></figcaption>
